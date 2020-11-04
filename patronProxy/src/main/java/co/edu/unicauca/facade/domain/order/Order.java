@@ -5,6 +5,7 @@
  */
 package co.edu.unicauca.facade.domain.order;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 /**
  *
@@ -15,7 +16,7 @@ public class Order {
     private Customer customer;
     private LocalDate date;
     private State state;
-    private List<Item>details;
+    private List<Item> details;
 
     public Order(Customer customer) {
         this.customer = customer;
@@ -78,7 +79,11 @@ public class Order {
     }
     
     public void addDish(Dish dish,int amount){
-        
+        if(this.details == null)
+        {
+            this.details = new ArrayList<>();
+        }
+        details.add(new Item(dish,amount));
     }
     
     public int calculateTotal(){
