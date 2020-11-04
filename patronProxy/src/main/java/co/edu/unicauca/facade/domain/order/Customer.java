@@ -14,13 +14,7 @@ public class Customer {
     private String name;
     private String address;
     private String mobile;
-    private String city;
-
-    /**
-     * @return the id
-     */
-       
-       
+    private String city; 
 
     public Customer(int id, String name, String address, String mobile, String city) {
         this.id = id;
@@ -29,7 +23,10 @@ public class Customer {
         this.mobile = mobile;
         this.city = city;
     }
-
+    
+    /**
+     * @return the id
+     */
     public int getId() {
         return id;
     }

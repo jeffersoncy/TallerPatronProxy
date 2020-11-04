@@ -9,6 +9,6 @@ package co.edu.unicauca.facade.domain.order;
  *
  * @author SONY-VAIO
  */
-public enum Enum {
+public enum State {
     NEW,CONFIRMED,DISPACHED,FINALIZED,CANCELLED;
 }

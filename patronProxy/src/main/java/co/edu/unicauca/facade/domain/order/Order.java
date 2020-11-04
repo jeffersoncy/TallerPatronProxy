@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package co.edu.unicauca.facade.domain.order;
-import co.edu.unicauca.facade.domain.order.Customer;
 import java.time.LocalDate;
 import java.util.List;
 /**
@@ -12,34 +11,16 @@ import java.util.List;
  * @author Personal
  */
 public class Order {
-    private int despatch;
+    public int despatch;
     private Customer customer;
     private LocalDate date;
-    private Enum state;
+    private State state;
     private List<Item>details;
 
-    public Order(int despatch, Customer customer, LocalDate date, Enum state, List<Item> details) {
-        this.despatch = despatch;
+    public Order(Customer customer) {
         this.customer = customer;
-        this.date = date;
-        this.state = state;
-        this.details = details;
     }
-
-    /**
-     * @return the despatch
-     */
-    public int getDespatch() {
-        return despatch;
-    }
-
-    /**
-     * @param despatch the despatch to set
-     */
-    public void setDespatch(int despatch) {
-        this.despatch = despatch;
-    }
-
+    
     /**
      * @return the customer
      */
@@ -71,14 +52,14 @@ public class Order {
     /**
      * @return the state
      */
-    public Enum getState() {
+    public State getState() {
         return state;
     }
 
     /**
      * @param state the state to set
      */
-    public void setState(Enum state) {
+    public void setState(State state) {
         this.state = state;
     }
 
@@ -96,5 +77,11 @@ public class Order {
         this.details = details;
     }
     
+    public void addDish(Dish dish,int amount){
+        
+    }
     
+    public int calculateTotal(){
+        return 1;
+    }
 }

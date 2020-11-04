@@ -12,22 +12,41 @@ package co.edu.unicauca.facade.domain.order;
 public class OrderFacade {
     private Order order;
 
-    public OrderFacade(Order order) {
-        this.order = order;
-    }
+    public OrderFacade(){}
 
+    
     /**
      * @return the order
      */
     public Order getOrder() {
         return order;
-    }
-
-    /**
-     * @param order the order to set
-     */
-    public void setOrder(Order order) {
-        this.order = order;
+    }  
+    
+    public void createOrder(Customer customer){
+        this.order = new Order(customer);
     }
     
+    public void addDish(Dish dish, int amount){
+        order.addDish(dish, amount);
+    }
+    
+    public void changeState(State state){
+        order.setState(state);
+    }
+    
+    public void cancelOrder() {
+        order.setState(State.CANCELLED);
+    }
+    
+    public int calculateTotal() {
+        return order.calculateTotal();
+    }
+    
+    public int totalDishes() {
+        return order.getDetails().size();
+    }
+    
+//    public void save(IOrderRepository repo){
+//        repo.createrOrder(order);
+//    }
 }
