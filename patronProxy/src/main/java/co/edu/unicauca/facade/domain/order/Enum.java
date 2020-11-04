@@ -7,8 +7,8 @@ package co.edu.unicauca.facade.domain.order;
 
 /**
  *
- * @author Personal
+ * @author SONY-VAIO
  */
-public class Custumer {
-    
+public enum Enum {
+    NEW,CONFIRMED,DISPACHED,FINALIZED,CANCELLED;
 }
