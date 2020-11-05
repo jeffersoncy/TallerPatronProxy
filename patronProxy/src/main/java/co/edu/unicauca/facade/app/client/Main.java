@@ -24,6 +24,7 @@ public class Main {
     //objeto proxy
     IOrderService orderProxy = new OrderServiceLogger(facade);
     
+    //operaciones normales con el objeto
     facade.createOrder(new Customer(1, "Carlos Sanchez", "Calle 12 No. 12-12 BarrioCaldas", "3115677899", "Popayán"));
     facade.addDish(new Dish(1, "Hamburguesa vegetariana", 5000), 2);
     facade.addDish(new Dish(2, "Hamburguesa sencilla", 4000), 3);   
@@ -39,6 +40,7 @@ public class Main {
     System.out.println("El valor total del pedido es: " + facade.calculateTotal());
     System.out.println("Total de platos pedidos: " + facade.totalDishes());
     
+    //se ejecuta el cliente proxy y se le pasa el sujeto que debe utilizar.
     ProxyClient client = new ProxyClient (orderProxy);
     client.createOrder();
     }

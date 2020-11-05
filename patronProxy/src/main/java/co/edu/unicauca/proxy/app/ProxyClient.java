@@ -1,25 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.edu.unicauca.proxy.app;
 
 import co.edu.unicauca.facade.access.Factory;
 import co.edu.unicauca.facade.access.IOrderRepository;
 
 /**
- *
+ * Lleva logs o loggers de llamados al sujeto real
  * @author Jefferson Eduardo Campo - Hector Esteban Coral
  */
 public class ProxyClient {
     
     private IOrderService orderService;
-
+    /**
+     * Constructor
+     * @param orderService sujeto
+     */
     public ProxyClient(IOrderService orderService) {
         this.orderService = orderService;
     }
     
+    /**
+     * Crea una instancia del repositorio y posteriormente la guarda
+     */
     public void createOrder() {
         IOrderRepository repo = Factory.getInstance().getRepository("default");
         orderService.save(repo);
