@@ -1,13 +1,14 @@
 package co.edu.unicauca.facade.domain.order;
 
 import co.edu.unicauca.facade.access.IOrderRepository;
+import co.edu.unicauca.proxy.app.IOrderService;
 
 /**
  * Esta clase permite negociar con los subsistemas o conjuntos de clases que son para llevar a cabo un pedido
  *
  * @author Jefferson Eduardo Campo - Hector Esteban Coral
  */
-public class OrderFacade {
+public class OrderFacade implements IOrderService{
     /*
     Atributos de la clase
     */
@@ -37,6 +38,14 @@ public class OrderFacade {
      */
     public void addDish(Dish dish, int amount){
         order.addDish(dish, amount);
+    }
+    
+    /**
+     * Método que se comuica con la clase order y modifica el precio de envio
+     * @param despatch valor de envio
+     */
+    public void addDespatch(int despatch){
+        order.setDespatch(despatch);
     }
     
     /**
@@ -74,6 +83,7 @@ public class OrderFacade {
      * Método que se comunica con la interfaz de repositorio para posteriormente guardar la orden
      * @param repo repositorio
      */
+    @Override
     public void save(IOrderRepository repo){
         repo.createOrder(order);
     }

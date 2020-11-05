@@ -10,7 +10,7 @@ public class Order {
     /*
     Atributos de la clase
     */
-    public int despatch;
+    private int despatch;
     private Customer customer;
     private LocalDate date;
     private State state;
@@ -103,6 +103,21 @@ public class Order {
             costo = I.getDish().getPrice() * I.getAmount();
             total += costo;
         }
-        return total + this.despatch;
+        return total + this.getDespatch();
     }
+
+    /**
+     * @return the despatch
+     */
+    public int getDespatch() {
+        return despatch;
+    }
+
+    /**
+     * @param despatch the despatch to set
+     */
+    public void setDespatch(int despatch) {
+        this.despatch = despatch;
+    }
+    
 }
