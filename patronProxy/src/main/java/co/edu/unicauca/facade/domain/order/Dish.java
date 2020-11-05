@@ -1,12 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.edu.unicauca.facade.domain.order;
 
 /**
- *
+ * Clase Plato
  * @author Jeferson Campo - Hector Coral
  */
 public class Dish {
@@ -14,6 +9,12 @@ public class Dish {
     private String name;
     private int price;
 
+    /**
+     * Constructor para el plato
+     * @param id código del plato
+     * @param name nombre
+     * @param price precio
+     */
     public Dish(int id, String name, int price) {
         this.id = id;
         this.name = name;

@@ -1,23 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.edu.unicauca.facade.domain.order;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 /**
- *
- * @author Personal
+ * Clase orden o pedido
+ * @author Jefferson Eduardo Campo - Hector Esteban Coral
  */
 public class Order {
+    /*
+    Atributos de la clase
+    */
     public int despatch;
     private Customer customer;
     private LocalDate date;
     private State state;
     private List<Item> details;
-
+    /**
+     * Constructor
+     * @param customer comprador
+     */
     public Order(Customer customer) {
         this.customer = customer;
     }
@@ -78,6 +79,11 @@ public class Order {
         this.details = details;
     }
     
+    /**
+     * Este método un nuevo item a la lista details
+     * @param dish plato
+     * @param amount cantidad
+     */
     public void addDish(Dish dish,int amount){
         if(this.details == null)
         {
@@ -86,7 +92,17 @@ public class Order {
         details.add(new Item(dish,amount));
     }
     
+    /**
+     * Metodo que calcula el total a pagar segun el numero de platos y su precio
+     * @return valor total de tipo entero
+     */
     public int calculateTotal(){
-        return 1;
+        int costo = 0;
+        int total = 0;
+        for (Item I : this.details) {
+            costo = I.getDish().getPrice() * I.getAmount();
+            total += costo;
+        }
+        return total + this.despatch;
     }
 }

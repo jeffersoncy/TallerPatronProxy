@@ -7,13 +7,21 @@ package co.edu.unicauca.facade.domain.order;
 
 import co.edu.unicauca.facade.domain.order.Dish;
 /**
- *
+ *  Clase item
  * @author Jeferson Campo - Hector Coral
  */
 public class Item {
+    /*
+    Atributos de la clase
+    */
     private Dish  dish;
     private int amount;
 
+    /**
+     * Constructor
+     * @param dish plato
+     * @param amount cantidad
+     */
     public Item(Dish dish, int amount) {
         this.dish = dish;
         this.amount = amount;

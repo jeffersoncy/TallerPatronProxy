@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.edu.unicauca.facade.app.client;
 
+import co.edu.unicauca.facade.access.Factory;
+import co.edu.unicauca.facade.access.IOrderRepository;
 import co.edu.unicauca.facade.domain.order.Customer;
 import co.edu.unicauca.facade.domain.order.Dish;
 import co.edu.unicauca.facade.domain.order.OrderFacade;
@@ -12,7 +9,7 @@ import co.edu.unicauca.facade.domain.order.State;
 
 /**
  *
- * @author Personal
+ * @author Jefferson Eduardo Campo Yule, Hector Esteban Coral
  */
 public class Main {
 
@@ -34,9 +31,8 @@ public class Main {
     System.out.println("Se cambio el estado a " + facade.getOrder().getState());
     System.out.println("El valor total del pedido es: " + facade.calculateTotal());
     System.out.println("Total de platos pedidos: " + facade.totalDishes());
-    //IOrderRepository repo = Factory.getInstance().getRepository("default");
-    //facade.save(repo);
+    IOrderRepository repo = Factory.getInstance().getRepository("default");
+    facade.save(repo);
     System.out.println("Pedido grabado con éxito en la base de datos");
     }
-    
 }

@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.edu.unicauca.facade.domain.order;
 
 /**
- *
- * @author SONY-VAIO
+ *  Clase de tipo enum con el conjuto de valores para el estado del pedido
+ * 
+ * @author Jefferson Eduardo Campo - Hector Esteban Coral
  */
 public enum State {
     NEW,CONFIRMED,DISPACHED,FINALIZED,CANCELLED;

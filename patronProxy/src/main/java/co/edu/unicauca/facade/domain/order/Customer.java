@@ -6,16 +6,28 @@
 package co.edu.unicauca.facade.domain.order;
 
 /**
- *
- * @author Jeferson Campo - Hector Coral
+ * Clase Customer
+ * 
+ * @author Jeferson Eduardo Campo - Hector Esteban Coral
  */
 public class Customer {
+    /*
+    Atributos de la clase
+    */
     private int id;
     private String name;
     private String address;
     private String mobile;
     private String city; 
 
+    /**
+     * Constructor
+     * @param id identificación del comprador
+     * @param name nombre
+     * @param address dirección
+     * @param mobile numero celular
+     * @param city  ciudad de origen
+     */
     public Customer(int id, String name, String address, String mobile, String city) {
         this.id = id;
         this.name = name;
@@ -25,21 +37,21 @@ public class Customer {
     }
     
     /**
-     * @return the id
+     * @return el id
      */
     public int getId() {
         return id;
     }
 
     /**
-     * @param id the id to set
+     * @param id el id para modificar
      */
     public void setId(int id) {
         this.id = id;
     }
 
     /**
-     * @return the name
+     * @return el nombre
      */
     public String getName() {
         return name;
@@ -47,49 +59,49 @@ public class Customer {
 
 
     /**
-     * @param name the name to set
+     * @param name el nombre para modificar
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * @return the address
+     * @return la dirección
      */
     public String getAddress() {
         return address;
     }
 
     /**
-     * @param address the address to set
+     * @param address la dirección para modificar
      */
     public void setAddress(String address) {
         this.address = address;
     }
 
     /**
-     * @return the mobile
+     * @return el celular
      */
     public String getMobile() {
         return mobile;
     }
 
     /**
-     * @param mobile the mobile to set
+     * @param mobile el celular para modificar
      */
     public void setMobile(String mobile) {
         this.mobile = mobile;
     }
 
     /**
-     * @return the city
+     * @return la ciudad
      */
     public String getCity() {
         return city;
     }
 
     /**
-     * @param city the city to set
+     * @param city la ciudad para modificar
      */
     public void setCity(String city) {
         this.city = city;
