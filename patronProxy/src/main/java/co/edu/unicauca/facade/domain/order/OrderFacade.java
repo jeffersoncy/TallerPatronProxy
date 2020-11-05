@@ -29,6 +29,7 @@ public class OrderFacade implements IOrderService{
      */
     public void createOrder(Customer customer){
         this.order = new Order(customer);
+        this.order.setState(State.NEW);
     }
     
     /**
@@ -40,13 +41,13 @@ public class OrderFacade implements IOrderService{
         order.addDish(dish, amount);
     }
     
-    /**
-     * Método que se comuica con la clase order y modifica el precio de envio
-     * @param despatch valor de envio
-     */
-    public void addDespatch(int despatch){
-        order.setDespatch(despatch);
-    }
+//    /**
+//     * Método que se comuica con la clase order y modifica el precio de envio
+//     * @param despatch valor de envio
+//     */
+//    public void addDespatch(int despatch){
+//        order.setDespatch(despatch);
+//    }
     
     /**
      * Método que se comunica con la clase order y cambia el estado de la orden

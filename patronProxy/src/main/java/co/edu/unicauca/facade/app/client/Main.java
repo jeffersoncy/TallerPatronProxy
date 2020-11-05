@@ -29,7 +29,6 @@ public class Main {
     facade.addDish(new Dish(1, "Hamburguesa vegetariana", 5000), 2);
     facade.addDish(new Dish(2, "Hamburguesa sencilla", 4000), 3);   
     facade.addDish(new Dish(3, "Jugo hit", 1000), 2);
-    facade.addDespatch(1500);
     System.out.println("Pedido creado");
     facade.changeState(State.CONFIRMED);
     System.out.println("Se cambio el estado a " + facade.getOrder().getState());

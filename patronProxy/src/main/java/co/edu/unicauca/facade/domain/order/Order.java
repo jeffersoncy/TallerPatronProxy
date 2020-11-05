@@ -99,6 +99,7 @@ public class Order {
     public int calculateTotal(){
         int costo = 0;
         int total = 0;
+        this.despatch = 1500;
         for (Item I : this.details) {
             costo = I.getDish().getPrice() * I.getAmount();
             total += costo;
